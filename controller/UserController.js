@@ -73,7 +73,7 @@ export const GetUsers = catchAsyncError(async function Signup(req, res, next) {
       })
    }
    else {
-      return next(new ErrorHandler("something went wrong", 501))
+      return next(new ErrorHandler("something went wrong", 501))  
    }
 })
 
@@ -90,16 +90,17 @@ export const GetUser = catchAsyncError(async function Signup(req, res, next) {
    }
 })
 
+
+
 export const UpdateUser = catchAsyncError(async function Signup(req, res, next) {
    const id = req.params.id
    const { name, email, password, username, role, phone_number, address, date_of_birth } = req.body;
 
-   // console.log(name, email, password, username, role, phone_number, address, date_of_birth)
-console.log(id)
-   const user = await userModel.findById(id)
+
+   const user = await userModel.findById(id) //getting user from database
 
    if (name) {
-      console.log(user.name)
+     
       user.name = name
    }
 
@@ -119,19 +120,19 @@ console.log(id)
       user.role = role
    }
 
-   if (phone_number) {
-      user.phone_number = phone_number
+   if (phone) {
+      user.phone = phone
    }
 
    if (address) {
       user.address = address
    }
 
-   if (date_of_birth) {
-      user.date_of_birth = date_of_birth
+   if (dob) {
+      user.dob = dob
    }
 
-   await user.save()
+   await user.save() //saving the changes
 
    if (user) {
       return res.json({
@@ -149,7 +150,7 @@ console.log(id)
 export const DeleteUser = catchAsyncError(async function DeleteUser(req, res, next) {
    const id = req.params.id
 
-   console.log(id)
+
    const user = await userModel.findByIdAndDelete(id)
    if (user) {
       return res.json({
