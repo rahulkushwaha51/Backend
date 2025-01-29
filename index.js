@@ -1,9 +1,10 @@
 import dotenv from 'dotenv'
 import express, { urlencoded, json } from 'express';
-import ErrorMiddleware from './src/middleware/error.js';
-import userRouter from './src/router/UserRouter.js';
+
+import userRouter from './router/UserRouter.js';
 import './db/db.js'
 import cors from 'cors';
+import ErrorMiddleware from './middleware/ErrorMiddleware.js'
 dotenv.config();
 const app = express();
 
