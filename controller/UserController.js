@@ -94,11 +94,11 @@ export const GetUser = catchAsyncError(async function Signup(req, res, next) {
 
 export const UpdateUser = catchAsyncError(async function Signup(req, res, next) {
    const id = req.params.id
-   const { name, email, password, username, role, phone_number, address, date_of_birth } = req.body;
+   const { name, email, password, username, role, phone, address, dob} = req.body;
 
 
    const user = await userModel.findById(id) //getting user from database
-
+rea
    if (name) {
      
       user.name = name
