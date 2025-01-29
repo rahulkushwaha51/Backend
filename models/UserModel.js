@@ -28,7 +28,7 @@ const userSchema = new Schema({
     },
 
     date_of_birth: {
-        type: date,
+        type: Date,
       
     },
 
