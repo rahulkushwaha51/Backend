@@ -30,7 +30,7 @@ export const Login = catchAsyncError(  async function Login(req, res) {
 })
 
 export const SignUp = catchAsyncError(async function Signup(req, res, next) {
-   const { name, email, password ,username, role, phone_number, address, date_of_birth} = req.body;
+   const { name, email, password ,username, role, phone, address, dob} = req.body;
 
    if (!validate(email)) {
       return next(new ErrorHandler(`${email} is not a valid email`, 403))
