@@ -28,7 +28,7 @@ const userSchema = new Schema({
     },
 
     date_of_birth: {
-        type: String,
+        type: date,
       
     },
 
@@ -42,7 +42,8 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        enum: ["user", "admin"]
+        enum: ["user", "admin"],
+        default: "user"
     },
 
 })
