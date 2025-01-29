@@ -47,8 +47,8 @@ export const SignUp = catchAsyncError(async function Signup(req, res, next) {
       password: password,
       name: name,
       address: address,
-      date_of_birth: date_of_birth,
-      phone_number: phone_number,
+      dob: dob,
+      phone: phone,
       role: role
    })
 
