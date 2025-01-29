@@ -28,8 +28,7 @@ const userSchema = new Schema({
     },
 
     date_of_birth: {
-        type: Date,
-      
+        type: String,
     },
 
     address: {
