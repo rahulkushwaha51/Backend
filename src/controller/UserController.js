@@ -91,12 +91,15 @@ export const GetUser = catchAsyncError(async function Signup(req, res, next) {
 })
 
 export const UpdateUser = catchAsyncError(async function Signup(req, res, next) {
-   const id = req.user._id
+   const id = req.params.id
    const { name, email, password, username, role, phone_number, address, date_of_birth } = req.body;
 
+   // console.log(name, email, password, username, role, phone_number, address, date_of_birth)
+console.log(id)
    const user = await userModel.findById(id)
 
    if (name) {
+      console.log(user.name)
       user.name = name
    }
 
@@ -145,6 +148,8 @@ export const UpdateUser = catchAsyncError(async function Signup(req, res, next) 
 
 export const DeleteUser = catchAsyncError(async function DeleteUser(req, res, next) {
    const id = req.params.id
+
+   console.log(id)
    const user = await userModel.findByIdAndDelete(id)
    if (user) {
       return res.json({

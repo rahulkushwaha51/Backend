@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { Login, SignUp, UpdateUser, DeleteUser, GetUsers , GetUser } from '../controller/UserController.js';
 
-import  isAuthenticated  from '../middleware/isAuthenticated.js';
+
 
 const router = Router();
 
@@ -16,8 +16,8 @@ userRouter
     .post(SignUp)
 
 userRouter
-    .route('/update')
-    .put(isAuthenticated,UpdateUser)
+    .route('/updateuser/:id')
+    .put(UpdateUser)
 
 
 userRouter
@@ -28,7 +28,7 @@ userRouter
     .get(GetUser)
 
 userRouter
-    .route('/delete/:id')
+    .route('/deleteuser/:id')
     .delete(DeleteUser)
 
 
