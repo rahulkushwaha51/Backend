@@ -27,7 +27,7 @@ const userSchema = new Schema({
         required: true
     },
 
-    date_of_birth: {
+    dob: {
         type: String,
     },
 
@@ -35,7 +35,7 @@ const userSchema = new Schema({
         type: String,
         
     },
-    phone_number: {
+    phone: {
         type: String,
         
     },
