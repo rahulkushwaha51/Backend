@@ -98,7 +98,7 @@ export const UpdateUser = catchAsyncError(async function Signup(req, res, next) 
 
 
    const user = await userModel.findById(id) //getting user from database
-rea
+
    if (name) {
      
       user.name = name
